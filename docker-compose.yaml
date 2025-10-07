@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  postgres:
+    build: .
+    container_name: bitcoin_graph_db
+    environment:
+      POSTGRES_USER: bitcoin
+      POSTGRES_PASSWORD: bitcoin
+      POSTGRES_DB: bitcoin
+      POSTGRES_PORT: 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./dataset:/dataset:ro
+      - .pgdata:/var/lib/postgresql/data
