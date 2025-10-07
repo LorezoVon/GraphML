@@ -18,6 +18,21 @@ Place the following files in the `dataset/` directory:
 
 Note: These files are gitignored and need to be obtained separately.
 
+## Dataset Source
+
+The dataset is available from Figshare: [BitcoinTemporalGraph](https://figshare.com/articles/dataset/BitcoinTemporalGraph/26305093)
+
+
+1. **Download and Extract the Dataset**
+   ```bash
+   pigz -p 10 -dc dataset.tar.gz | tar -xvf -
+   ```
+2. **Storage Requirements**
+   - node_features table: 40GB
+   - transaction_edges table: 80GB (including indexes)
+   
+Make sure you have sufficient storage space available before proceeding with the restoration.
+
 ## Quick Start
 
 1. **Prepare the Environment**
@@ -91,4 +106,3 @@ These settings can be adjusted in the `Dockerfile` if needed.
 3. **Slow Import**
    - The initial import might take several hours depending on your hardware
    - Progress can be monitored in the Docker logs
-
